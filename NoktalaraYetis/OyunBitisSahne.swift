@@ -86,12 +86,28 @@ class OyunBitisSahne: SKScene {
                 
             }
             
+            if anaMenuButon.contains(dokunma){
+                
+                let changSceneAction = SKAction.run(sahneDegistirAnaMenu)
+                self.run(changSceneAction)
+                
+            }
+            
         }
     }
     
     func sahneDegistir(){
         
         let sceneMoveTo = GameScene(size: self.size, gameMode: lastGameMode, userGameData: userGameData)
+        sceneMoveTo.scaleMode = self.scaleMode
+        let theTransition = SKTransition.fade(withDuration: 1.0)
+        self.view!.presentScene(sceneMoveTo, transition: theTransition)
+        
+    }
+    
+    func sahneDegistirAnaMenu(){
+        
+        let sceneMoveTo = MainMenu(size: self.size, UserGameData: userGameData)
         sceneMoveTo.scaleMode = self.scaleMode
         let theTransition = SKTransition.fade(withDuration: 1.0)
         self.view!.presentScene(sceneMoveTo, transition: theTransition)
