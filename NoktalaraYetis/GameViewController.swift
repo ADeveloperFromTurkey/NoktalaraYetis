@@ -18,7 +18,7 @@ class GameViewController: UIViewController {
             // Load the SKScene from 'GameScene.sks'
             if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
                 
-                let scene = GameScene(size: CGSize(width: 1536, height: 2048), gameMode: "10'lu", userGameData: appDelegate.appUserData)
+                let scene = MainMenu(size: CGSize(width: 1536, height: 2048), UserGameData: appDelegate.appUserData)
                 scene.scaleMode = SKSceneScaleMode.aspectFill
                 
                 // Present the scene
